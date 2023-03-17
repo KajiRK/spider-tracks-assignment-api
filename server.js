@@ -2,11 +2,13 @@ const express  = require('express');
 require('dotenv').config();
 const connectDb = require('./config/database');
 const errorHandler = require('./middleware/errorHandler');
+const cors = require('cors')
 
 connectDb();
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const port = parseInt(process.env.PORT) || 3000;
 
