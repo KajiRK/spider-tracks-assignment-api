@@ -23,6 +23,9 @@ const customerSchema = mongoose.Schema(
             required: [true, 'Customer status is required'],
             enum: ['Active', 'Non-Active', 'Lead'],
             default: 'Active'
+        },
+        opps: {
+            type: Array
         }
     },
     {
