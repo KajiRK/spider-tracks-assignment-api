@@ -1,7 +1,7 @@
 const express  = require('express');
 const router = express.Router();
 
-const { getCustomers, createCustomer, getCustomer } = require("../controllers/customerController");
+const { getCustomers, createCustomer, getCustomer, updateCustomer } = require("../controllers/customerController");
 
 // To get all customers of the company
 router.route('/').get(getCustomers);
@@ -11,5 +11,8 @@ router.route('/').post(createCustomer);
 
 // To get a specific customer details
 router.route('/:id').get(getCustomer);
+
+// To update a specific customer details
+router.route('/:id').put(updateCustomer);
 
 module.exports = router;
