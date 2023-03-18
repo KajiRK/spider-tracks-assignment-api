@@ -49,9 +49,12 @@ const updateCustomer = asyncHandler( async (req, res) => {
     const customer = await Customer.findByIdAndUpdate(req.params.id, req.body);
     if(!customer) {
         res.status(404);
-        throw new Error("Customer not found.");
+        throw new Error("Customer not found!")
     }
-    res.status(200).json(customer);
+    res.status(200).json({
+        data: customer,
+        message: 'Customer updated successfully!'
+    });
 });
 
 module.exports = { getCustomers, createCustomer, getCustomer, updateCustomer };
