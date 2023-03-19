@@ -12,7 +12,7 @@
 | Update customer | PUT | /api/customers/:id |
 | Update customer status | PATCH | /api/customers/:id/status |
 | Create opp | POST | /api/customers/:id/opps |
-| Update opp | POST | /api/customers/:id/opps/:oppId |
+| Update opp | PUT | /api/customers/:id/opps/:oppId |
 
 ## API Postman Collection 
 
