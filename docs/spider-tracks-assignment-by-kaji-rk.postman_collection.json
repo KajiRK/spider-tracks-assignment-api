@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "f6957b1d-ffa7-4f7d-9add-7898b5ea4e5d",
+		"name": "spider-tracks-assignment-by-kaji-rk",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25789095"
+	},
+	"item": [
+		{
+			"name": "get-customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"code\": \"CUS0006\",\r\n\t\"name\": \"Jhon Kiron\",\r\n\t\"mobile\": \"0778814225\",\r\n\t\"email\": \"kaji.rk@outlook.com\",\r\n\t\"status\": \"Lead\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/customers/6416154b6a3365568f1c7e1e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"customers",
+						"6416154b6a3365568f1c7e1e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-customer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"Kajitharan RK\",\r\n\t\"mobile\": \"0778814211\",\r\n\t\"email\": \"kajitharan@outlook.com.au\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/customers/6416154b6a3365568f1c7e1e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"customers",
+						"6416154b6a3365568f1c7e1e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-customer-status",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"status\": \"Lead\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/customers/6416154b6a3365568f1c7e1e/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"customers",
+						"6416154b6a3365568f1c7e1e",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-opp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"CUS0001 - Opp1\",\r\n\t\"status\": \"Closed Won\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/customers/6416154b6a3365568f1c7e1e/opps",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"customers",
+						"6416154b6a3365568f1c7e1e",
+						"opps"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-opp",
+			"request": {
+				"method": "PUT",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
