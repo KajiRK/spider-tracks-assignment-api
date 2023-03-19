@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
     res.send('Welcome to Spider Track - Assignment by Kaji RK...!');
 });
 
-app.use('/api/customers', require("./routes/customerRoutes"))
+app.use('/api/customers', require("./routes/customerRoutes"));
 
 app.use(errorHandler);
 

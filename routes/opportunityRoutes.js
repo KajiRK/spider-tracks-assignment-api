@@ -1,9 +1,9 @@
 const express  = require('express');
 const router = express.Router();
 
-const { createOpp } = require("../controllers/opportunityController");
+const { updateOpp } = require("../controllers/opportunityController");
 
-// To create opp against to the customer
-router.route('/:id/opps').post(createOpp);
+// To update a specific opp details
+router.route('/:id').put(updateOpp);
 
 module.exports = router;

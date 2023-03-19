@@ -46,7 +46,7 @@ const updateCustomer = asyncHandler( async (req, res) => {
         res.status(400);
         throw new Error("Fill all required feilds.")
     }
-    const customer = await Customer.findByIdAndUpdate(req.params.id, req.body);
+    const customer = await Customer.findByIdAndUpdate(req.params.id, req.body, {new: true});
     if(!customer) {
         res.status(404);
         throw new Error("Customer not found!")
