@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 const customerSchema = mongoose.Schema(
     {
-        code: {
+        code: { // Unique identifier
             type: String,
             required: [true, 'Customer code is required']
-        },
+        }, 
         name: {
             type: String,
             required: [true, 'Customer name is required']

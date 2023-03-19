@@ -58,7 +58,7 @@ const updateCustomer = asyncHandler( async (req, res) => {
 });
 
 //@desc - Update customer status
-//@route - PUT - /api/customers/:id/status
+//@route - PATCH - /api/customers/:id/status
 //@access - Public
 const updateCustomerStatus = asyncHandler( async (req, res) => {
     const {status} = req.body;
