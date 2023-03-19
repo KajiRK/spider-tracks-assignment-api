@@ -17,7 +17,7 @@ const createCustomer = asyncHandler( async (req, res) => {
     const {code, name, mobile, email, status} = req.body;
     if(!code || !name || !email || !status){
         res.status(400);
-        throw new Error("Fill all required feilds.")
+        throw new Error("Fill all required feilds.");
     }
     const customer = await Customer.create({
         code, name, mobile, email, status
@@ -44,12 +44,12 @@ const updateCustomer = asyncHandler( async (req, res) => {
     const {name, email} = req.body;
     if(!name || !email){
         res.status(400);
-        throw new Error("Fill all required feilds.")
+        throw new Error("Fill all required feilds.");
     }
     const customer = await Customer.findByIdAndUpdate(req.params.id, req.body, {new: true});
     if(!customer) {
         res.status(404);
-        throw new Error("Customer not found!")
+        throw new Error("Customer not found!");
     }
     res.status(200).json({
         data: customer,
@@ -57,4 +57,24 @@ const updateCustomer = asyncHandler( async (req, res) => {
     });
 });
 
-module.exports = { getCustomers, createCustomer, getCustomer, updateCustomer };
+//@desc - Update customer status
+//@route - PUT - /api/customers/:id/status
+//@access - Public
+const updateCustomerStatus = asyncHandler( async (req, res) => {
+    const {status} = req.body;
+    if(!status){
+        res.status(400);
+        throw new Error("Status is required.");
+    }
+    const customer = await Customer.findByIdAndUpdate(req.params.id, {status: status}, {new: true});
+    if(!customer) {
+        res.status(404);
+        throw new Error("Customer not found!");
+    }
+    res.status(200).json({
+        data: customer,
+        message: 'Customer updated successfully!'
+    });
+});
+
+module.exports = { getCustomers, createCustomer, getCustomer, updateCustomer, updateCustomerStatus };

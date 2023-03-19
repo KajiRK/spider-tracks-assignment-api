@@ -10,7 +10,7 @@ const createOpp = asyncHandler( async (req, res) => {
     const {name, status} = req.body;
     if(!name || !status){
         res.status(400);
-        throw new Error("Fill all required feilds.")
+        throw new Error("Fill all required feilds.");
     }
     const opp = await Opportunity.create({
        name, status
@@ -37,13 +37,13 @@ const updateOpp = asyncHandler( async (req, res) => {
     const {name, status} = req.body;
     if(!name || !status){
         res.status(400);
-        throw new Error("Fill all required feilds.")
+        throw new Error("Fill all required feilds.");
     }
 
     const opp = await Opportunity.findByIdAndUpdate(req.params.oppId, req.body, {new: true});
     if(!opp) {
         res.status(404);
-        throw new Error("opp not found!")
+        throw new Error("opp not found!");
     }
 
     const customerData = await Customer.findById(req.params.id);
